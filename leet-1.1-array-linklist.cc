@@ -1,3 +1,4 @@
+//数组类型经典面试题，二分查找
 int search(vector<int>& arr, int t) {
   int first = 0, last = arr.size();
   while(first!=last) {
@@ -19,7 +20,25 @@ int search(vector<int>& arr, int t) {
   }
   return -1;
 }
-
+//============================================
+//1 链表反转
+struct Node {
+  int v;
+  Node* next;
+  Node(int x): val(x), next(NULL) {}
+};
+Node* reverse(Node* head) {
+  Node* p = head;
+  Node* q = NULL;
+  while(p!=NULL) {
+    Node* temp = p->next;
+    p->next = q;
+    q = p;
+    p = temp;
+  }
+  return q;
+}
+//2 随机拷贝
 struct RandomListNode {
   int label;
   RandomListNode* next;
@@ -49,7 +68,7 @@ RandomListNode* copy(RandomListNode *head) {
   return dummy.next;
 }
 
-
+//3 lru
 class LRUCache {
 private:
   struct CacheNode {
