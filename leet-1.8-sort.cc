@@ -38,16 +38,16 @@ void sift(vector<int>& a, int root, int length) {
     parent = child, child = parent*2;
   }
 }
- 
+
 void heapSort(vector<int> & a, int len) {
-	for (int i = len / 2; i >= 0; i--) {
-		sift(a,i,len);
-	}
+  for (int i = len / 2; i >= 0; i--) {
+    sift(a,i,len);
+  }
   
-	for (int j = len - 1; j > 0; j--) {
+  for (int j = len - 1; j > 0; j--) {
     swap(a[0], a[j]);
-		sift(nums,0,j);
-	}
+    sift(nums,0,j);
+  }
 }
 
 //4 merge sort
